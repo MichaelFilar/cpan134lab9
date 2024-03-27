@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h2>Lab 9</h2>
+    <p id="q1a">Press F12 to see terminal output of all functions and stuff.</p>
+
+    <script>
+        //inventory object made
+        var inventory = {
+            //No products in it
+            products: [],
+            //addProducts function
+            addProducts: function(prodID, name, quantity) {
+                this.products[prodID] = {name, quantity};
+                return;
+            },
+            //displayInventory function
+            displayInventory: function() {
+                for (i in this.products) {
+                    console.log(this.products[i].name+": "+this.products[i].quantity);
+                }
+                return;
+            },
+            //findProduct function
+            findProduct: function(prodID) {
+                if (this.products[prodID] != undefined) {
+                    console.log(this.products[prodID].name + ": " + this.products[prodID].quantity);
+                } else {
+                    console.log("Sorry, this product does not exist.");
+                }
+                return;
+            }
+        };
+
+        //Terminal Output
+
+        //addProducts
+        inventory.addProducts("id123", "Car", "1");
+        inventory.addProducts("id124", "Phone", "2");
+        console.log("displayInventory")
+        inventory.displayInventory();
+        console.log(" ")
+        console.log("findProduct")
+        inventory.findProduct("id123");
+        inventory.findProduct("id124");
+        inventory.findProduct("id125");
+
+
+    </script>
+</body>
+</html>
